@@ -5,8 +5,8 @@
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 <meta property="og:title" content="{{ site.site_title }}" />
 <meta property="og:description" content="{{ site.description }}" />
-<meta property="og:image" content="images/elixir_logo.png" />
-<title>{{ page.title }} | {{ site.site_title }}</title>
+<meta property="og:image" content="//rdmkit.elixir-europe.org/images/elixir_logo.png" />
+<title>{%- if page.title %}{{ page.title }} | {{ site.site_title }} %}{%- else %}{{ site.site_title }}{%- endif %}</title>
 <!-- Syntax highlighting  -->
 <link rel="stylesheet" href="css/syntax.css">
 <!-- Icons -->
@@ -27,3 +27,13 @@
 <script src="js/customscripts.js"></script>
 <!-- favicon -->
 <link rel="shortcut icon" href="images/favicon.ico">
+<!-- Schema.org metadata -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RDMKit", 
+        "url": "{{ site.url }}",
+        "about": "{{ site.description }}",
+    }
+</script> 
